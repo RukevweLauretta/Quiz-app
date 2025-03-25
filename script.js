@@ -62,7 +62,6 @@ function loadQuestions(){
 
 function checkAnswer(){
     const selected = document.querySelector('input[name="two"]:checked');
-
     if(!selected) {
         alert ('Please select valid option')
         return
@@ -73,19 +72,15 @@ function checkAnswer(){
     const elementAnswer = quiz.answer
 
     if (selected.value == elementAnswer){
-        alert('CORRECT');}
+            alert('CORRECT');
+            taskCounter ++;
+            if (taskCounter <= quizQuestions.length){
+                loadQuestions();
+       }}
     
     else {
         alert("Wrong!");
     }
-    
-  
-if(taskCounter < quizQuestions.length) {
-    taskCounter ++;
-    loadQuestions();
-} else{
-    alert('completed');
-}
 
 }
 
